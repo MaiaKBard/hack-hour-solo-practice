@@ -13,9 +13,35 @@ fizzbuzz(16);
 */
 
 const fizzbuzz = (num) => {
-  return [];
+  //Input: Number
+  // Ouput: Array
+  //Declare an empty array
+  const output = []
+  //For loop to increment up to num - starting at 1
+  for(let i = num; i >= 1; i--){
+    // console.log(num--)
+  //If/Else for conditions 
+    //"Fizz" - For numbers divisible by 3 but not 5
+    // "Buzz" - For numbers divisble by 5 but not 3
+    //"Fizzbuzz" - For numbers divisble by 3 and 5
+    //Everything else is a number
+    if (num % 3 === 0 && num % 5 !== 0) {
+      output.push('fizz')
+    } else if (num % 5 === 0 && num % 3 !== 0) {
+      output.push('buzz')
+    } else if (num % 5 === 0 && num % 3 === 0) {
+      output.push('fizzbuzz')
+    } else {
+      output.push(num)
+    }
+    num--
+  }
+  //Revese the built array so it outputs from smallest to greatest
+  const results = output.reverse()
+  //Return reversed built array
+  return results
 };
-
+// console.log(fizzbuzz(16))
 /*
 
 Extension: 
@@ -37,7 +63,33 @@ fizzbuzzbazz(25);
 */
 
 const fizzbuzzbazz = (num) => {
-  return [];
+  //Input: number
+  //Ouput: array
+  const output = []
+
+  for(let i = num; i >= 1; i--){
+    if (num % 3 === 0 && num % 5 !== 0 && num % 7 !== 0) {
+      output.push('fizz')
+    } else if (num % 5 === 0 && num % 3 !== 0 && num % 7 !== 0) {
+      output.push('buzz')
+    } else if (num % 7 === 0 && num % 5 !== 0 && num % 3 !== 0){
+      output.push('bazz')
+    } else if (num % 3 === 0 && num % 5 === 0 && num % 7 !== 0) {
+      output.push('fizzbuzz')
+    } else if (num % 3 === 0 && num % 7 === 0 && num % 5 !== 0) {
+      output.push('fizzbazz')
+    } else if (num % 5 === 0 && num % 7 === 0 && num % 3 !== 0) {
+      output.push('buzzbazz')
+    } else if (num % 5 === 0 && num % 3 === 0 && num % 7 === 0) {
+      output.push('fizzbuzzbazz')
+    }else {
+      output.push(num)
+    }
+    num--
+  }
+  const results = output.reverse()
+  return results
 };
 
 export { fizzbuzz, fizzbuzzbazz };
+// console.log(fizzbuzzbazz(25))
