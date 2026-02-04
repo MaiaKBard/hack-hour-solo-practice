@@ -15,11 +15,27 @@
   twoSum(nums, 9) -> false
   Rationale: No elements inside the array sum up to the target number
 */
-
+// I dont think you could because we talked about in class how arrays are formmatted in a way that 
+// requires you to manually search each element in an array... I think
 export const twoSum = (arr, target) => {
+  //Input: array of numbers + target number
+  //Output: Boolean 
+
+  // Two loops 
+  //Outer loop equals the first element to add to the rest
+  for(let i = 0; i < arr.length; i++){
+    //Inner loop will start at the second elment and increment through them adding to the first element then the next and so on
+    for(let j = 1; j < arr.length; j++) {
+      //If it finds the target nember itll output true
+      // console.log(arr[j]) 
+      if (arr[i] + arr[j] === target) return true
+    }
+  }
+  //Defualt to return false if nothing is found
   return false;
 };
-
+const nums = [2, 5, 11, 15]
+console.log(twoSum(nums, 9))
 /*
 Extension:
 Given an array of numbers and a target number, 
